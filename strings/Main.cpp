@@ -9,8 +9,6 @@ using std::endl;
 int main(int argc, char const *argv[])
 {
 
-  char alfabeto[] = "abcdefghijklmnopqrstuvwxyz";
-
   for (int i = 1; i <= argc - 1; i++)
   {
 

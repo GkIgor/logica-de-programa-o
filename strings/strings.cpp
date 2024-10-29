@@ -8,40 +8,42 @@ namespace $strings
   {
     int size = 0;
 
-    for (int i = 0; input[i] != '\0'; i++)
+    for (int i = 0; input[i] != '\0'; i++) // Percorre cada caracter da palavra
     {
-      size++;
+      size++; // Incrementa o tamanho da palavra em +1 a cada loop
     }
 
     return size;
   }
 
-  char *toUppercase(char palavra[])
+  char *toUppercase(char palavra[]) // Transforma uma palavra em letras maiusculas
   {
-    if (palavra == nullptr)
+    if (palavra == nullptr) // Verifica se a palavra é nula
     {
-      throw runtime_error("NULL POINTER EXCEPTION IN $strings::toUppercase!");
+      throw runtime_error("NULL POINTER EXCEPTION IN $strings::toUppercase!"); // Para o programa
     }
 
-    int strSize = size(palavra) + 1;
-    char *novaPalavra = new char[strSize];
+    int strSize = size(palavra) + 1; // Calcula o tamanho da palavra
+    char *novaPalavra = new char[strSize]; // Cria um novo array com o tamanho da palavra
 
-    if (palavra[strSize - 1] != '\0')
-      novaPalavra[strSize - 1] = '\0';
-
-    for (int i = 0; i < strSize - 1; i++)
+    if (palavra[strSize - 1] != '\0') // Verifica se a palavra termina com um \0
     {
-      char letra = palavra[i];
-      if (letra >= 'a' && letra <= 'z')
+      novaPalavra[strSize - 1] = '\0'; // Coloca um \0 no final do array
+    }
+
+    for (int i = 0; i < strSize - 1; i++) // Percorre cada caracter da palavra
+    {
+      char letra = palavra[i]; // Pega o caracter
+
+      if (letra >= 'a' && letra <= 'z') // Verifica se o caracter é minusculo
       {
-        novaPalavra[i] = letra - ('a' - 'A');
+        novaPalavra[i] = letra - ('a' - 'A'); // Transforma o caracter em maiusculo
       }
-      else
+      else // Se o caracter nao for minusculo
       {
-        novaPalavra[i] = letra;
+        novaPalavra[i] = letra; // Coloca o caracter no novo array
       }
     }
-    return novaPalavra;
+    return novaPalavra; // Retorna o novo array
   }
-
 }
