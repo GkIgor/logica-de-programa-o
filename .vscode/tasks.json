@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-array",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/array/Main.cpp",
+        "-o",
+        "${workspaceFolder}/array/Main"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build-strings",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/strings/Main.cpp",
+        "-o",
+        "${workspaceFolder}/strings/Main"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}

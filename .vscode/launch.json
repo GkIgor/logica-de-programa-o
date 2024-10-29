@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Array",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/array/Main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/array",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "preLaunchTask": "build-array",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Run Array",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/array/Main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/array",
+      "environment": [],
+      "externalConsole": true // Use console externa para ver a saída
+    },
+    {
+      "name": "Debug Strings",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/strings/Main",
+      "args": ["igor ferreira", "1234"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/strings",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "preLaunchTask": "build-strings",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Run Strings",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/strings/Main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/strings",
+      "environment": [],
+      "externalConsole": true // Use console externa para ver a saída
+    }
+  ]
+}
