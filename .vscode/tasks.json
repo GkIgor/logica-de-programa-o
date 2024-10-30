@@ -33,6 +33,24 @@
       "problemMatcher": [
         "$gcc"
       ]
+    },
+    {
+      "label": "build-number",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/number/Main.cpp",
+        "-o",
+        "${workspaceFolder}/number/Main"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
     }
   ]
 }

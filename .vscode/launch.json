@@ -50,6 +50,34 @@
       "cwd": "${workspaceFolder}/strings",
       "environment": [],
       "externalConsole": true // Use console externa para ver a saída
+    },
+    {
+      "name": "Debug number",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/number/Main",
+      "args": [
+        "igor ferreira",
+        "1234"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/number",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "preLaunchTask": "build-number",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Run number",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/number/Main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/number",
+      "environment": [],
+      "externalConsole": true // Use console externa para ver a saída
     }
   ]
 }
