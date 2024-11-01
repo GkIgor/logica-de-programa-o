@@ -51,6 +51,24 @@
       "problemMatcher": [
         "$gcc"
       ]
+    },
+    {
+      "label": "build-standard",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/standard/Main.cpp",
+        "-o",
+        "${workspaceFolder}/standard/Main"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
     }
   ]
 }

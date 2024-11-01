@@ -11,31 +11,32 @@ namespace $std
   private:
     union
     {
-      T value;
+      T _value;
     };
-    bool has_value = false;
+    bool _has_value = false;
 
   public:
-    Optional() : has_value(false) {};
+    Optional() : _has_value(false) {};
 
-    Optional(const T &val) : has_value(true)
+    Optional(const T &val) : _has_value(true)
     {
-      new (&value) T(val);
+      new (&_value) T(val);
     }
 
     ~Optional()
     {
+
       reset();
     };
 
     bool const has_value() const
     {
-      return has_value;
+      return _has_value;
     }
 
     T &value()
     {
-      if (!has_value)
+      if (!_has_value)
       {
         throw runtime_error("Nenhum valor presente em Optional");
       }
@@ -44,11 +45,11 @@ namespace $std
 
     T &value() const
     {
-      if (!has_value)
+      if (!_has_value)
       {
         throw runtime_error("Nenhum valor presente em Optional");
       }
-      return value;
+      return _value;
     }
 
     T &operator*()
@@ -63,25 +64,38 @@ namespace $std
 
     operator bool() const
     {
-      return has_value;
+      return _has_value;
     }
 
     void reset()
     {
-      if (has_value)
+      if (_has_value)
       {
-        value.~T();
-        has_value = false;
+        _value.~T();
+        _has_value = false;
       }
     }
 
     operator T() const
     {
-      if (!has_value)
+      if (!_has_value)
       {
         throw std::runtime_error("No value present in Optional!");
       }
       return value;
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Optional &opt)
+    {
+      if (opt._has_value)
+      {
+        os << opt._value;
+      }
+      else
+      {
+        os << "Nenhum valor presente";
+      }
+      return os;
     }
   };
 
